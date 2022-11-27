@@ -17,7 +17,7 @@ def next_available_row(worksheet):
     return str(len(str_list) + 1)
 
 
-def confirmMatch(winner_name, loser_name, winner_id, loser_id, winner_score, loser_score, game_mode):
+def confirm_match(winner_name, loser_name, winner_id, loser_id, winner_score, loser_score, game_mode):
     print('\n' + str(datetime.datetime.now()))
     print('function: confirmMatch entered')
 
@@ -66,22 +66,10 @@ def confirmMatch(winner_name, loser_name, winner_id, loser_id, winner_score, los
 
     next_row = next_available_row(log_sheet)
 
-    # A list of all cells on the next row of the log_sheet
-    cell_list = [log_sheet.acell("A{}".format(next_row)), log_sheet.acell("B{}".format(next_row)),
-                 log_sheet.acell("C{}".format(next_row)), log_sheet.acell("D{}".format(next_row)),
-                 log_sheet.acell("E{}".format(next_row)), log_sheet.acell("F{}".format(next_row)),
-                 log_sheet.acell("G{}".format(next_row)), log_sheet.acell("H{}".format(next_row)),
-                 log_sheet.acell("I{}".format(next_row)), log_sheet.acell("J{}".format(next_row)),
-                 log_sheet.acell("K{}".format(next_row)), log_sheet.acell("L{}".format(next_row))]
-
-    # A list of all values to be added to the cells stored in cell_list
+    # A list of all values to be added to the log
     value_list = [winner_id, winner_name, winner_score, winner.rating, winner.rd, loser_id, loser_name, loser_score,
                   loser.rating, loser.rd, '{:%b/%d/%Y at %H:%M:%S}'.format(datetime.datetime.now()),
                   int(f'{int(next_row) - 1}')]
 
-    for i, val in enumerate(value_list):
-        cell_list[i].value = val
-
     # Add all gathered data to the next row of the log_sheet
-    # log_sheet.update_cells(cell_list)
     log_sheet.append_row(value_list)

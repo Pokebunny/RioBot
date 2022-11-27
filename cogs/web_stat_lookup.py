@@ -55,10 +55,10 @@ class WebStatLookup(commands.Cog):
             if char == "all" or user == "all":
                 c_o = " OPS+"
 
-            embed = discord.Embed(title=user + " - " + char + " (" + str(pa) + " PA): ",
-                                  description="AVG: " + "{:.3f}".format(avg) + "\nOBP: " + "{:.3f}".format(
-                                      obp) + "\nSLG: " + "{:.3f}".format(slg) + "\nOPS: " + "{:.3f}".format(
-                                      ops) + "\n" + c_o + ": " + str(round(ops_plus)))
+            embed = discord.Embed(title=user + " - " + char + " (" + str(pa) + " PA)",
+                                  description="AVG: " + "{:.3f}".format(avg) + "\nOBP: " + "{:.3f}".format(obp) +
+                                              "\nSLG: " + "{:.3f}".format(slg) + "\nOPS: " + "{:.3f}".format(ops) +
+                                              "\n" + c_o + ": " + str(round(ops_plus)))
 
             embed.set_thumbnail(url=characters.images[char])
 
@@ -107,10 +107,9 @@ class WebStatLookup(commands.Cog):
             if char == "all" or user == "all":
                 char_or_all = " ERA-"
 
-            embed = discord.Embed(title=user + " - " + char + " (" + ip_str + " IP): ",
+            embed = discord.Embed(title=user + " - " + char + " (" + ip_str + " IP)",
                                   description="opp. AVG: " + "{:.3f}".format(d_avg) + "\nERA: " + "{:.2f}".format(era) +
-                                              "\nK%: " + "{:.1f}".format(kp) + "\n" + char_or_all + ": " + str(
-                                      round(cera_minus)))
+                                              "\nK%: " + "{:.1f}".format(kp) + "\n" + char_or_all + ": " + str(round(cera_minus)))
 
             embed.set_thumbnail(url=characters.images[char])
 

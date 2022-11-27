@@ -21,18 +21,6 @@ class Misc(commands.Cog):
         """)
         await ctx.send(embed=embed)
 
-    # washed copypasta
-    @commands.command()
-    @commands.cooldown(1, 2, commands.BucketType.user)
-    async def washed(self, ctx):
-        embed = discord.Embed()
-        embed.add_field(name="WASHED",
-                        value="I would've won if i hadn't taken a break for a long time, scored more runs than you, "
-                              "played only top tier competition, didn't waste my time, gave up less runs than you, "
-                              "and I can beat remkey again anyway, and i did it for the people, and i only play top "
-                              "players so i don't know this matchup")
-        await ctx.send(embed=embed)
-
     # displays server rules
     @commands.command()
     @commands.cooldown(1, 2, commands.BucketType.user)
@@ -177,14 +165,6 @@ class Misc(commands.Cog):
                         value='For a tutorial on setting up Project Rio, check out <#823805174811197470> or head to our website <https://www.projectrio.online/tutorial>\nIf you need further help, please use <#823805409143685130> to get assistance.')
         await ctx.send(embed=embed)
 
-    @commands.command()
-    @commands.cooldown(1, 2, commands.BucketType.user)
-    async def rayveean(self, ctx):
-        embed = discord.Embed()
-        embed.add_field(name='RAYVEEAN HURT MY FEELINGS:',
-                        value="Rayveean changed my name to dignus and it really hurts my feelings inside. But I won't admit that to him because that would be embarassing")
-        await ctx.send(embed=embed)
-
     # ball flickering
     @commands.command()
     @commands.cooldown(1, 2, commands.BucketType.user)
@@ -223,21 +203,6 @@ class Misc(commands.Cog):
                               'You can change which gecko codes are active by opening Project Rio and clicking the "Gecko Code" tab on the top of the window. Simply checko off which mods you want to use. You can obtain all of out gecko codes by clicking "Download Codes" at the bottom right corner of the Gecko Codes window.\n\n'
                               '**NOTES**:\n-Do **NOT** disable any code which is labeled as "Required" otherwise many Project Rio functionalites will not work\n-If you run into bugs when using gecko codes, you may have too many turned on. Try turning off the Netplay Event Code\n-The Netplay Event Code is used for making online competitive games easy to set up. It is only required for ranked online games')
         await ctx.send(embed=embed)
-
-    # guy.jpg
-    @commands.command()
-    async def guy(self, ctx):
-        await ctx.send('<:Guy:927712162829451274>')
-
-    # peacock
-    @commands.command()
-    async def peacock(self, ctx):
-        await ctx.send(':peacock:')
-
-    # goombo
-    @commands.command()
-    async def dingus(self, ctx):
-        await ctx.send('<:goombo:987231921916510228>')
 
     # inform users about roles
     @commands.command()
