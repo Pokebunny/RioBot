@@ -157,3 +157,4 @@ cython_debug/
 .idea/inspectionProfiles/Project_Default.xml
 .idea/inspectionProfiles/profiles_settings.xml
 match_log.txt
+.idea/csv-plugin.xml

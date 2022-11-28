@@ -68,7 +68,6 @@ class Misc(commands.Cog):
         elif rule == 9:
             embed.add_field(name="Posting Excessively Loud Videos",
                             value="• Excessively loud videos are not allowed in media channels.")
-
         elif rule == 10:
             embed.add_field(name="Asking for an ISO / ROM",
                             value="• Asking for an ISO / ROM of any game is prohibited.\n"

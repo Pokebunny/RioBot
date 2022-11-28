@@ -378,5 +378,5 @@ images = {
     "Dry Bones(B)": "https://i.imgur.com/vJRutvp.png",
     "Bro(F)": "https://i.imgur.com/c0n64rJ.png",
     "Bro(B)": "https://i.imgur.com/9oBKUlT.png",
-    "all": "https://i.imgur.com/RTCrAYi.png"
+    "all": "https://i.imgur.com/yTjBaXK.png"
 }

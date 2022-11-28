@@ -188,14 +188,14 @@ async def check_for_match(bot: commands.Bot, user_id, min_rating, max_rating, mi
 
         if best_match:
             global match_count
-            await channel.send("We have a " + queue[user_id][
-                "Game Type"] + " match! <@" + user_id + "> vs <@" + str(best_match) + ">. Find matches in <#" + str(
-                BUTTON_CHANNEL_ID) + ">")
             try:
                 with open("match_log.txt", "w") as file:
-                    file.write(
-                        str(match_count[queue[user_id]["Game Type"]]) + " " + queue[user_id]["Game Type"] + " match: " +
+                    file.write(str(match_count[queue[user_id]["Game Type"]]) + " " + queue[user_id]["Game Type"] + " match: " +
                         queue[user_id]["Name"] + " " + str(queue[user_id]["Rating"]) + " vs " + queue[best_match]["Name"] + " " + str(queue[best_match]["Rating"]))
+                await channel.send("We have a " + queue[user_id][
+                    "Game Type"] + " match! <@" + user_id + "> vs <@" + str(
+                    best_match) + ">. Find matches in <#" + str(
+                    BUTTON_CHANNEL_ID) + ">")
             except KeyError:
                 print("Double match")
             match_count[queue[user_id]["Game Type"]] += 1
@@ -205,7 +205,7 @@ async def check_for_match(bot: commands.Bot, user_id, min_rating, max_rating, mi
                 del queue[user_id]
             return True
 
-    if 300 < time.time() - queue[user_id]["Time"] < 315:
+    if 300 <= time.time() - queue[user_id]["Time"] < 315:
         role_id = "<@&998791156794150943>"
         if queue[user_id]["Game Type"] == "Superstars-On Ranked":
             role_id = "<@&998791464630898808>"

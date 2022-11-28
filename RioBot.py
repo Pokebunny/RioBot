@@ -45,7 +45,7 @@ async def on_command_error(ctx, error):
     print(error)
 
     if isinstance(error, commands.CommandOnCooldown):
-        embed=discord.Embed(title=error, color=0xEA7D07)
+        embed = discord.Embed(title=error, color=0xEA7D07)
         await ctx.send(embed=embed)
 
     elif isinstance(error, commands.UserInputError):
@@ -60,23 +60,25 @@ async def on_command_error(ctx, error):
             embed.add_field(name='Error:', value=str(error), inline=False)
             await ctx.send(embed=embed)
         else:
-            embed=discord.Embed(title= 'Please specify your score, your opponents score, and tag your opponent', color=0xEA7D07)
-            embed.add_field(name= 'Example:', value= '!submit 12 5 @user' , inline=True)
+            embed = discord.Embed(title='Please specify your score, your opponents score, and tag your opponent',
+                                  color=0xEA7D07)
+            embed.add_field(name='Example:', value='!submit 12 5 @user', inline=True)
             embed.add_field(name='Error:', value=str(error), inline=True)
             await ctx.send(embed=embed)
 
     elif isinstance(error, commands.CommandNotFound):
-        embed=discord.Embed(title= 'The specified command does not exist!', color=0xEA7D07)
-        embed.add_field(name= 'Error:', value= str(error) , inline=True)
+        embed = discord.Embed(title='The specified command does not exist!', color=0xEA7D07)
+        embed.add_field(name='Error:', value=str(error), inline=True)
         await ctx.send(embed=embed)
 
     elif isinstance(error, commands.MissingRole):
-        embed=discord.Embed(title=error, color=0xEA7D07)
+        embed = discord.Embed(title=error, color=0xEA7D07)
         await ctx.send(embed=embed)
 
     else:
-        embed=discord.Embed(title= 'Something went wrong!', color=0xEA7D07)
+        embed = discord.Embed(title='Something went wrong!', color=0xEA7D07)
         embed.add_field(name='Error:', value=str(error), inline=True)
         await ctx.send(embed=embed)
+
 
 bot.run(token)
